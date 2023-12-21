@@ -3,6 +3,20 @@
 @section('content')
         <h1>บทความทั้งหมด</h1>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta vitae asperiores temporibus adipisci dolorem, sit dolores sunt, et illo non illum cupiditate dolorum architecto nobis! Quibusdam culpa ipsam quidem voluptas.</p>
+        <hr>
+        @foreach ($blogs as $item)
+          <h4>{{$item["title"]}}</h4>
+          <p>{{$item["content"]}}</p>
+          {{-- <p>{{$item["status"]}}</p> --}}
+          @if ($item["status"] ==true)
+            <p class="text text-success">เผยแพร่</p>
+          @else 
+            <p class="text text-danger">ฉบับร่าง</p>
+            
+          @endif
+          <hr>
+        @endforeach
+
         {{-- <form class="row g-3">
             <div class="col-md-4">
               <label for="validationServer01" class="form-label">First name</label>

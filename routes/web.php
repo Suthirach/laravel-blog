@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admincontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,21 +21,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('blog', function () {
-    return view('blog');
-})->name('blog');
+Route::get('blog',[Admincontroller::class,'blog'])->name('blog');
 
-Route::get('about', function () {
-    return view('about');
-})->name('about');
+Route::get('about',[Admincontroller::class,'about'])->name('about');
 
-Route::get('login', function () {
-    return view('login');
-})->name('login');
+Route::get('login',[Admincontroller::class,'login'])->name('login');
 
-Route::get('signin', function () {
-    return view('signin');
-})->name('signin');
+Route::get('signin',[Admincontroller::class,'signin'])->name('signin');
 // Route::get('/', function () {
 //     return view('blog');
 // });
