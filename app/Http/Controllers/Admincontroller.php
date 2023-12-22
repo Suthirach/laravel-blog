@@ -60,4 +60,12 @@ class Admincontroller extends Controller
         return view('form');
     }
     
+    function insert(Request $request){
+        $request->validate([
+            'title'=>'required| max:50',
+            'content'=>'required'
+        ]);
+
+    }
 }
+ 

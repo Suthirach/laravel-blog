@@ -30,6 +30,7 @@ Route::get('login',[Admincontroller::class,'login'])->name('login');
 Route::get('signin',[Admincontroller::class,'signin'])->name('signin');
 
 Route::get('create',[Admincontroller::class,'create'])->name('create');
+Route::post('insert',[Admincontroller::class,'insert']);
 
 
 // Route::get('/', function () {
