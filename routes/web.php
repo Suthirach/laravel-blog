@@ -28,6 +28,10 @@ Route::get('about',[Admincontroller::class,'about'])->name('about');
 Route::get('login',[Admincontroller::class,'login'])->name('login');
 
 Route::get('signin',[Admincontroller::class,'signin'])->name('signin');
+
+Route::get('create',[Admincontroller::class,'create'])->name('create');
+
+
 // Route::get('/', function () {
 //     return view('blog');
 // });

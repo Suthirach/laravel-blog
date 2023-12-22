@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>@yield('title')</title>
+    <title>@yield('title') : Uzrax</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
@@ -23,11 +23,12 @@
                     <a class="nav-link active" aria-current="page" href="/">หน้าแรก</a>
                     <a class="nav-link" href="{{route('blog')}}">บทความทั้งหมด</a>
                     <a class="nav-link" href="{{route('about')}}">เกี่ยวกับเรา</a>
+                    <a class="nav-link" href="{{route('create')}}">เขียนบทความ</a>
                     {{-- <button type="button" class="btn-primary nav-link" href="{{route('login')}}">Login</button> --}}
                     {{-- <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a> --}}
                 </div>
             </div>
-        <a href="{{route('login')}}" class="btn btn-primary" role="button" data-bs-toggle="button">Login</a>
+            <a href="{{route('login')}}" class="btn btn-primary" role="button" data-bs-toggle="button">Login</a>
         </div>
     </nav>
 <div class="container py-3 p-3 mb-2 bg-body-secondary">

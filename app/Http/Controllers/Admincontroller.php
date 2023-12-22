@@ -55,5 +55,9 @@ class Admincontroller extends Controller
     function signin() {
         return view('signin');
     }
+
+    function create(){
+        return view('form');
+    }
     
 }
