@@ -30,7 +30,14 @@ Route::get('login',[Admincontroller::class,'login'])->name('login');
 Route::get('signin',[Admincontroller::class,'signin'])->name('signin');
 
 Route::get('create',[Admincontroller::class,'create'])->name('create');
+
 Route::post('insert',[Admincontroller::class,'insert']);
+
+Route::get('delete/{id}',[Admincontroller::class,'delete']);
+
+Route::get('change/{id}',[Admincontroller::class,'change'])->name('change');
+
+
 
 
 // Route::get('/', function () {

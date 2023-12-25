@@ -19,6 +19,13 @@
             <label for="tilte">เนื่อหาบทความ</label>
             <textarea name="content" id="" cols="30" rows="5" class="form-control"></textarea>
         </div>
+
+        @error('content')
+        <div class="my-2">
+            <span class="text text-danger">{{$message}}</span>
+        </div>
+        @enderror
+        
         <input type="submit" value="บันทึก" class="btn btn-primary my-2">
         <a href="/blog" class="btn btn-success">บทความทั้งหมด</a>
     </form>
