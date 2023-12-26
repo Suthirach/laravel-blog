@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.app')
 @section('title','หน้าแรก')
 @section('content')
 <h1>หน้าแรกของเว็บไซต์</h1>

@@ -28,7 +28,7 @@
                     {{-- <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a> --}}
                 </div>
             </div>
-            <a href="{{route('login')}}" class="btn btn-primary" role="button" data-bs-toggle="button">Login</a>
+            {{-- <a href="{{route('login')}}" class="btn btn-primary" role="button" data-bs-toggle="button">Login</a> --}}
         </div>
     </nav>
 <div class="container py-3 p-3 mb-2 bg-body-secondary">

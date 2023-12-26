@@ -6,9 +6,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class Admincontroller extends Controller
-{   
-    function blog() {
-        $blogs = DB::table('blogs')->get();
+
+{   //paginate(3);คืือการจำจัดข้อมูลในหน้าแสดงผล  
+    function blog () {
+        $blogs = DB::table('blogs')->paginate(5);  
         return view('blog',compact('blogs'));
     }
 

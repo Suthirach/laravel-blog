@@ -25,9 +25,9 @@ Route::get('blog',[Admincontroller::class,'blog'])->name('blog');
 
 Route::get('about',[Admincontroller::class,'about'])->name('about');
 
-Route::get('login',[Admincontroller::class,'login'])->name('login');
+// Route::get('login',[Admincontroller::class,'login'])->name('login');
 
-Route::get('signin',[Admincontroller::class,'signin'])->name('signin');
+// Route::get('signin',[Admincontroller::class,'signin'])->name('signin');
 
 Route::get('create',[Admincontroller::class,'create'])->name('create');
 
@@ -76,3 +76,7 @@ Route::post('update/{id}',[Admincontroller::class,'update'])->name('update');
 
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

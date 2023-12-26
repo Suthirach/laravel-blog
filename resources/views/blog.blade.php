@@ -1,6 +1,7 @@
-@extends('layout')
+@extends('layouts.app')
 @section('title','บทความทั้งหมด')
 @section('content')
+    @if (count($blogs)>0)
     <h2 class="text text-center py-2">บทความทั้งหมด</h2>
     <table class="table table-bordered text-center">
         <thead>
@@ -8,6 +9,7 @@
                 <th scope="col">ชื่อบทความ</th>
                 <th scope="col">เนื้อหา</th>
                 <th scope="col">สถานะ</th>
+                <th scope="col">แก้ไขบทความ</th>
                 <th scope="col">ลบบทความ</th>
             </tr>
         </thead>
@@ -44,4 +46,10 @@
         </tbody>
         @endforeach
     </table>  
+    {{$blogs->links()}}
+    @else
+        <h2 class="text text-center py-2">ไม่มีบทความระบบ โปรดสร้างบทความในบาร์ 'เขียนบทความ'!!</h2>
+
+    @endif
+
 @endsection
