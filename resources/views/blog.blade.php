@@ -21,9 +21,13 @@
                     @if ($item->status==true)
                    <a href="{{route('change',$item->id)}}" class="btn btn-success">เผยแพร่</a> 
                     @else 
-                   <a href="{{route('change',$item->id)}}" class="btn btn-warning">ฉบับร่าง</a>
+                   <a href="{{route('change',$item->id)}}" class="btn btn-secondary">ฉบับร่าง</a>
                     @endif
 
+                </td>
+                
+                <td>
+                    <a href="#" class="btn btn-primary">แก้ไข </a>
                 </td>
                 <td>
                     <a  
@@ -32,6 +36,9 @@
                         onclick="return confirm('คุณต้องการจะลบบทความ {{$item->title}} ใช่หรือไม่ ?')"
                         >ลบ
                     </a>
+                </td>
+                <td><a href="#" class="btn btn-primary">แก้ไข</a>
+                    
                 </td>
                 {{-- <td><a href="{{route('delete',$item->id)}}" class="btn btn-danger">ลบ</a></td> --}}
             </tr>
