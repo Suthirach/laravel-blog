@@ -75,7 +75,7 @@ class Admincontroller extends Controller
        return view('edit',compact('blog'));
 
      }
-    
+    //ฟังชั้นในการแก้ไขข้อความ
      function update(Request $request,$id){
         $request->validate(
             [    //การตรวจใน inpull 
