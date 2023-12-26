@@ -37,6 +37,10 @@ Route::get('delete/{id}',[Admincontroller::class,'delete']);
 
 Route::get('change/{id}',[Admincontroller::class,'change'])->name('change');
 
+Route::get('edit/{id}',[Admincontroller::class,'edit'])->name('edit');
+
+Route::post('update/{id}',[Admincontroller::class,'update'])->name('update');
+
 
 
 

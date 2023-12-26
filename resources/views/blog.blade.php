@@ -27,7 +27,7 @@
                 </td>
                 
                 <td>
-                    <a href="#" class="btn btn-primary">แก้ไข </a>
+                    <a href="{{route('edit',$item->id)}}" class="btn btn-warning">แก้ไข </a>
                 </td>
                 <td>
                     <a  
@@ -37,9 +37,8 @@
                         >ลบ
                     </a>
                 </td>
-                <td><a href="#" class="btn btn-primary">แก้ไข</a>
-                    
-                </td>
+            
+                
                 {{-- <td><a href="{{route('delete',$item->id)}}" class="btn btn-danger">ลบ</a></td> --}}
             </tr>
         </tbody>
