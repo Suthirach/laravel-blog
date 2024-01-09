@@ -1,8 +1,19 @@
 @extends('layouts.app')
 @section('title','หน้าแรก')
 @section('content')
-<h1>หน้าแรกของเว็บไซต์</h1>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta vitae asperiores temporibus adipisci dolorem, sit dolores sunt, et illo non illum cupiditate dolorum architecto nobis! Quibusdam culpa ipsam quidem voluptas.</p>
+<br>
+<h1>สวัสดี !!
+        <h2>เราคือศูนย์รวมนักเขียนที่ใหญ่ที่สุดในไทย</h2></h1> <br>
+        <p>"ยินดีต้อนรับสู่ "เว็บไซต์ที่เต็มไปด้วยประสบการณ์และอรรถรสทางความรู้! ทุกที่นี่เป็นศูนย์รวมบทความและนักเขียนที่มีให้บริการมากที่สุดในประเทศไทย เพื่อที่จะทำให้คุณได้รับประสบการณ์การเรียนรู้ที่ครอบคลุมทุกสายงานและความสนใจของคุณ!</p>
 
+        <h3>บทความล่าสุด</h3>
+        <hr>
+        @foreach ($blogs as $item)
+                <h2>{{$item->title}}</h2>
+                <p>{{Str::limit($item->content,70)}}</p>
+                <a href="/detail/{{$item->id}}">อ่านบทความเพิ่มเติม</a>
+                <hr>
+            
+        @endforeach
     
 @endsection

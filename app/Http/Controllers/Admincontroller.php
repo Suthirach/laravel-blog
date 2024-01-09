@@ -4,12 +4,25 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\Blog;
 
 class Admincontroller extends Controller
 
-{   //paginate(3);คืือการจำจัดข้อมูลในหน้าแสดงผล  
+{   
+    // ฟังชั้นที่ใช้สำหรับการจำกัดสิทธิการเข้าถึง โดยต้องล็อคอินก่อน
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+
+    //paginate(3);คืือการจำจัดข้อมูลในหน้าแสดงผล  
     function blog () {
-        $blogs = DB::table('blogs')->paginate(5);  
+        //เรียกใช้ตารางแบบ ไม่ใช่  model
+        // $blogs = DB::table('blogs')->paginate(5); 
+
+        //เรียกใช้ตารางแบบ model คำสั่งจะสั้นขึ้น
+        $blogs=Blog::paginate(10);
         return view('blog',compact('blogs'));
     }
 
@@ -48,16 +61,20 @@ class Admincontroller extends Controller
             'content'=>$request->content
         ];
         //ส่งข้อมูลเพื่อบันทึกลง database 
-        DB::table('blogs')->insert($data);
-        return redirect('/blog');
+        Blog::insert($data);
+        return redirect('/author/blog');
 
         
 
     }
     //ฟังชั่นที่ใช้ในการลบข้อมูล
     function delete($id){
-        DB::table('blogs')->where('id',$id)->delete();
-        return redirect('/blog');
+        // DB::table('blogs')->where('id',$id)->delete();
+
+        // ลบใช้ตารางแบบ model 
+       
+        Blog::find($id)->delete();
+        return redirect('/author/blog');
 
     }
     //ฟังชั้นที่ใช้ในการ update ข้อูมูล
@@ -68,7 +85,7 @@ class Admincontroller extends Controller
             'status'=>!$blog->status
         ];
         $blog=DB::table('blogs')->where('id',$id)->update($data);
-        return redirect('/blog');
+        return redirect('/author/blog');
         
     }
      function edit($id){
@@ -95,7 +112,7 @@ class Admincontroller extends Controller
         ];
         //ส่งข้อมูลเพื่อบันทึกลง database 
         DB::table('blogs')->where('id',$id)->update($data);
-        return redirect('/blog');
+        return redirect('/author/blog');
      }
 
 

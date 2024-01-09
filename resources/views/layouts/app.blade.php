@@ -15,6 +15,8 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    <script src="https://cdn.ckeditor.com/ckeditor5/40.2.0/classic/ckeditor.js"></script>
+
 </head>
 <body>
     <div id="app">
@@ -49,12 +51,12 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                สวัสดีคุณ : {{ Auth::user()->name }}
+                                สวัสดีคุณนักเขียน : {{ Auth::user()->name }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a  class="dropdown-item" href="/create">เขียนบทความ</a>
-                                    <a  class="dropdown-item" href="/blog">บทความทั้งหมด</a>
+                                    <a  class="dropdown-item" href="/author/create">เขียนบทความ</a>
+                                    <a  class="dropdown-item" href="/author/blog">บทความทั้งหมด</a>
                                     <a  class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

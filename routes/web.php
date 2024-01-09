@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admincontroller;
+use App\Http\Controllers\BlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,33 +17,29 @@ use App\Http\Controllers\Admincontroller;
 root URL ("/") of the application. When a user visits the root URL, it will execute the provided
 callback function and return the view named "welcome". */
 
+// นักกอ่าน 
+Route::get('/',[BlogController::class,'index']); 
+Route::get('/detail/{id}',[BlogController::class,'detail']); 
 
-Route::get('/', function () {
-    return view('welcome');
+
+// นักเขียน 
+Route::prefix('author')->group(function(){
+
+    Route::get('blog',[Admincontroller::class,'blog'])->name('blog');
+    Route::get('about',[Admincontroller::class,'about'])->name('about');
+    // Route::get('login',[Admincontroller::class,'login'])->name('login');
+    // Route::get('signin',[Admincontroller::class,'signin'])->name('signin');
+    Route::get('create',[Admincontroller::class,'create'])->name('create');
+    Route::post('insert',[Admincontroller::class,'insert']);
+    Route::get('delete/{id}',[Admincontroller::class,'delete']);
+    Route::get('change/{id}',[Admincontroller::class,'change'])->name('change');
+    Route::get('edit/{id}',[Admincontroller::class,'edit'])->name('edit');
+    Route::post('update/{id}',[Admincontroller::class,'update'])->name('update');
+    
 });
 
-Route::get('blog',[Admincontroller::class,'blog'])->name('blog');
-
-Route::get('about',[Admincontroller::class,'about'])->name('about');
-
-// Route::get('login',[Admincontroller::class,'login'])->name('login');
-
-// Route::get('signin',[Admincontroller::class,'signin'])->name('signin');
-
-Route::get('create',[Admincontroller::class,'create'])->name('create');
-
-Route::post('insert',[Admincontroller::class,'insert']);
-
-Route::get('delete/{id}',[Admincontroller::class,'delete']);
-
-Route::get('change/{id}',[Admincontroller::class,'change'])->name('change');
-
-Route::get('edit/{id}',[Admincontroller::class,'edit'])->name('edit');
-
-Route::post('update/{id}',[Admincontroller::class,'update'])->name('update');
-
-
-
+Auth::routes();
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Route::get('/', function () {
 //     return view('blog');
@@ -77,6 +74,4 @@ Route::post('update/{id}',[Admincontroller::class,'update'])->name('update');
 
 
 
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

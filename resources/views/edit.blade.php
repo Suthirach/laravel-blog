@@ -27,7 +27,7 @@
         @enderror
         
         <input type="submit" value="อัพเดท" class="btn btn-primary my-2">
-        <a href="/blog" class="btn btn-success">บทความทั้งหมด</a>
+        <a href="/author/blog" class="btn btn-success">บทความทั้งหมด</a>
     </form>
  
 @endsection 

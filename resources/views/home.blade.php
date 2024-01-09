@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    คุณ {{ Auth::user()->name }} มาเริ่มเขียนบทความกัน!!
+                    คุณนักเขียน :  {{ Auth::user()->name }} มาเริ่มเขียนบทความกัน!!
                     
                 </div>
             </div>
@@ -25,8 +25,8 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    <a href="/create" class="btn btn-dark">เขียนบทความ</a>
-                    <a href="/blog" class="btn btn-dark">บทความทั้งหมด</a>
+                    <a href="/author/create" class="btn btn-dark">เขียนบทความ</a>
+                    <a href="/author/blog" class="btn btn-dark">บทความทั้งหมด</a>
                 </div>
             </div>
         </div>

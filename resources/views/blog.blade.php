@@ -6,6 +6,7 @@
     <table class="table table-bordered text-center">
         <thead>
             <tr>
+                <th scope="col">ลำดับ</th>
                 <th scope="col">ชื่อบทความ</th>
                 <th scope="col">เนื้อหา</th>
                 <th scope="col">สถานะ</th>
@@ -13,10 +14,10 @@
                 <th scope="col">ลบบทความ</th>
             </tr>
         </thead>
-        @foreach ($blogs as $item)
+        @foreach ($blogs as $keys=>$item)
         <tbody>
             <tr>
-                {{-- <th scope="row">1</th> --}}
+                <td scope="row" >{{$keys+1}}</td>
                 <td>{{$item->title}}</td>
                 <td>{{Str::limit($item->content,15)}}</td>
                 <td>
@@ -33,7 +34,7 @@
                 </td>
                 <td>
                     <a  
-                        href="/delete/{{$item->id}}" 
+                        href="/author/delete/{{$item->id}}" 
                         class="btn btn-danger" 
                         onclick="return confirm('คุณต้องการจะลบบทความ {{$item->title}} ใช่หรือไม่ ?')"
                         >ลบ
